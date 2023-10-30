@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>File Upload Form</title>
+  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+  <style>
+    body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #13fcaaf3;
+  margin: 70px;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="file"] {
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  }
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+.navbar {
+      /* background-color: #a9a1a1; */
+      overflow: hidden;
+    }
+    
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    
+    .navbar li {
+      flex: 1;
+    }
+    
+    .navbar li a {
+      display: block;
+      color: #f10909;
+      text-align: right;
+      padding: 20px;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+          <!-- <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li> -->
+          <li><a href="/client">Back to Home</a></li>
+        </ul>
+    </div>
+  <h1>Upload Your Case File</h1>
+  <form action="" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<label for="document">Document: </label>
+    <input type="file" name="file" id="file">
+    <!-- <a href="upload?id={{i.id}}" class="btn">Submit</a> -->
+    <input type="submit" value="Upload" name="submit">
+  </form>
+</body>
+</html>

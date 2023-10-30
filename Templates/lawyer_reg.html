@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lawyer Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+        background-image: url({%static"images/reg2.jpg"%});
+      }
+
+      h2 {
+        text-align: center;
+        color: #fff;
+      }
+
+      form {
+        opacity: 0.4;
+        max-width: 400px;
+        margin: 0 auto;
+        /* background-color: #fff; */
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        color: #fff;
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="number"],
+      input[type="password"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      .error {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+      .form-link {
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .form-link a {
+        color: #4caf50;
+        text-decoration: none;
+      }
+      .navbar {
+        /* background-color: #a9a1a1; */
+        overflow: hidden;
+      }
+
+      .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      .navbar li {
+        flex: 1;
+      }
+
+      .navbar li a {
+        display: block;
+        color: #f10909;
+        text-align: right;
+        padding: 20px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <ul>
+        <!-- <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li> -->
+        <li><a href="/">Back to Home</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <h2>Lawyer Registration Form</h2>
+      <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="number" name="number" required />
+        </div>
+        <div class="form-group">
+          <label for="bar_number">Bar Number:</label>
+          <input type="text" id="bar_number" name="bar_number" required />
+        </div>
+        <div class="form-group">
+          <label for="specialization">Specialization:</label>
+          <select id="specialization" name="specialization" required>
+            <option value="" disabled selected>Select specialization</option>
+            <option value="Civil Law">Civil Law</option>
+            <option value="Criminal Law">Criminal Law</option>
+            <option value="Corporate Law">Corporate Law</option>
+            <option value="Family Law">Family Law</option>
+            <!-- Add more options as needed -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="experience">Years of Experience:</label>
+          <input
+            type="text"
+            id="experience"
+            name="experience"
+            min="0"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <!-- <div class="form-group">
+      <label for="confirm_password">Confirm Password:</label>
+      <input type="password" id="confirm_password" name="confirm_password" required>
+    </div> -->
+        <button type="submit">Register</button>
+      </form>
+      <div class="form-link">
+        Already have an account? <a href="login">Log In</a>
+      </div>
+    </div>
+  </body>
+</html>

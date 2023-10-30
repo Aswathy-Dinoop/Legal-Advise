@@ -1,0 +1,163 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+      background-image: url({% static 'images/reg1.jpg' %});
+    }
+
+    .container {
+      opacity: 0.7;
+      max-width: 400px;
+      margin: 0 auto;
+      /* background-color: #fff; */
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+  
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],select
+   {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #807d7d;
+      border-radius: 3px;
+    }
+
+    input[type="submit"] {
+      /* width: 100%; */
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .form-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .form-link a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+    .navbar {
+      /* background-color: #a9a1a1; */
+      overflow: hidden;
+    }
+    
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    
+    .navbar li {
+      flex: 1;
+    }
+    
+    .navbar li a {
+      display: block;
+      color: #f10909;
+      text-align: right;
+      padding: 20px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <ul>
+      <!-- <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li> -->
+      <li><a href="/">Back to Home</a></li>
+    </ul>
+</div>
+  <div class="container">
+    <h2>Sign Up Here</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+      <label for="district">Your Name</label>
+      <input type="text" name="name" placeholder="Name" required>
+      </div>
+      <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" name="email" placeholder="Email" required>
+      </div>
+      <div class="form-group">
+        <label for="number">Contact Number:</label>
+      <input type="number" name="number" placeholder="Contact Number" required>
+      </div>
+      <div class="form-group">
+        <label for="text">Address:</label>
+      <input type="text" name="address" placeholder="Your Address Here...." required>
+      </div>
+      <div class="form-group">
+      <label for="district">District : </label>
+      
+                      
+        <select id="district" name="district" placeholder="Select your district" required>
+       
+        <option value="Trivandrum">Trivandrum</option>
+        <option value="Kollam">Kollam</option>
+        <option value="Pathanamthitta">Pathanamthitta</option>
+        <option value="Alappuzha">Alappuzha</option>
+        <option value=">Kottayam">Kottayam</option>
+        <option value="Idukki">Idukki</option>
+        <option value="Ernakulam">Ernakulam</option>
+        <option value="Thrissur">Thrissur</option>
+        <option value="Palakkad">Palakkad</option>
+        <option value="Malappuram">Malappuram</option>
+        <option value="Kozhikode">Kozhikode</option>
+        <option value="Wayanad">Wayanad</option>
+        <option value="Kannur">Kannur</option>
+        <option value="Kasaragod">Kasaragod</option>
+        </select>
+        </div>
+     <div class="form-group">
+        <label for="email">Password:</label>
+      <input type="password" name="password" placeholder="Password" required>
+      </div>
+      <input type="submit" value="Sign Up">
+    </form>
+    <div class="form-link">
+      Already have an account? <a href="login">Log In</a>
+    </div>
+  </div>
+</body>
+</html>

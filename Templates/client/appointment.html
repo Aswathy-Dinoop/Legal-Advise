@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book an Appointment</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f3d676;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+textarea,select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.navbar {
+      /* background-color: #a9a1a1; */
+      overflow: hidden;
+    }
+    
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    
+    .navbar li {
+      flex: 1;
+    }
+    
+    .navbar li a {
+      display: block;
+      color: #f10909;
+      text-align: right;
+      padding: 20px;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <ul>
+      <!-- <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li> -->
+      <li><a href="/client">Back to Home</a></li>
+    </ul>
+</div>
+  <h2>Book an Appointment</h2>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input type="phone" id="phone" name="phone" required>
+    </div>
+    <div class="form-group">
+      <label for="date">Preferred Date:</label>
+      <input type="date" id="date" name="date" required>
+    </div>
+    <div class="form-group">
+      <label for="time">Preferred Time:</label>
+      <input type="time" id="time" name="time" required>
+    </div>
+    <div class="form-group">
+      <label for="venue">Venue:</label>
+      
+      <select id="venue" name="venue" required>
+        <option value="" disabled selected>Select a Spot</option>
+        <option value="Office">Office</option>
+        <option value="Home">Home</option>
+        <option value="Restaurant">Restaurant</option>
+        <option value="Guest House">Guest House</option>
+        </select>
+
+
+      <!-- <textarea id="venue" name="venue" rows="4" required></textarea> -->
+    </div>
+    <button type="submit">Book Appointment</button>
+  </form>
+</body>
+</html>

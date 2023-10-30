@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(to right, #33ccff 0%, #ff99cc 100%);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      table {
+        width: 55%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+        border-style: solid;
+        border-color: #4a0fca;
+      }
+
+      th {
+        background-color: #7870eb;
+      }
+
+      tr {
+        border-bottom: 1px solid #4a0fca;
+      }
+      .navbar {
+        /* background-color: #a9a1a1; */
+        overflow: hidden;
+      }
+
+      .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      .navbar li {
+        flex: 1;
+      }
+
+      .navbar li a {
+        display: block;
+        color: #f10909;
+        text-align: right;
+        padding: 20px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <ul>
+        <!-- <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li> -->
+        <li><a href="/client">Back to Home</a></li>
+      </ul>
+    </div>
+    <table>
+      <h1>Documents</h1>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Documents</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in record %}
+        <tr>
+          <td>{{i.user.name}}</td>
+          <td>{{i.document}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body> 
+</html>

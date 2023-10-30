@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Client Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    .search-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+    
+    .search-container input[type=text] {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+    }
+    
+    .search-container input[type=submit] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    .search-results {
+      margin-top: 50px;
+    }
+    
+    .search-results table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .search-results table td, .search-results table th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    .search-results table tr:nth-child(even){background-color: #f2f2f2;}
+    
+    .search-results table tr:hover {background-color: #ddd;}
+    
+    .search-results table th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #4CAF50;
+      color: white;
+    }
+    .navbar {
+      /* background-color: #a9a1a1; */
+      overflow: hidden;
+    }
+    
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    
+    .navbar li {
+      flex: 1;
+    }
+    
+    .navbar li a {
+      display: block;
+      color: #f10909;
+      text-align: right;
+      padding: 20px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <ul>
+      <!-- <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li> -->
+      <li><a href="/client">Back to Home</a></li>
+    </ul>
+</div>
+  <div class="search-container">
+    <h2>Search Clients by Name</h2>
+    <form action="#" method="post">
+        {% csrf_token %}
+      <input type="text" name="search" placeholder="Enter client name">
+      <input type="submit" value="Search">
+    </form>
+  </div>
+
+  <div class="search-results">
+    <h2>Search Results</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>District</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in client %}
+        <tr>
+          <td>{{i.name}}</td>
+          <td>{{i.phone}}</td>
+          <td>{{i.district}}</td>
+        </tr>
+        {% endfor %}
+       
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
